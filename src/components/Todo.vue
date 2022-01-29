@@ -3,9 +3,11 @@
     <h2>{{ title }}</h2>
 
     <div class="input__box">
-      <input v-model="taskName" type="text" required="" />
+      <input v-model="taskName" type="text" required />
       <label>Task</label>
     </div>
+    <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+
     <button @click="add">Add</button>
 
     <p v-if="tasks.length === 0" class="empty__state">No tasks yet</p>
@@ -36,15 +38,22 @@ export default {
     return {
       tasks: [],
       taskName: "",
+      errorMessage: "",
     };
   },
   methods: {
     add: function () {
+      if (!this.taskName) {
+        this.errorMessage = "Task name cannot be empty";
+        return;
+      }
+      this.errorMessage = "";
       this.tasks.push({
         name: this.taskName,
         status: false,
         id: this.tasks.length,
       });
+      this.taskName = "";
     },
     toggleStatus: function (task) {
       task.status = !task.status;
@@ -57,6 +66,15 @@ export default {
 </script>
 
 <style scoped>
+p.error {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 2px 0px 14px 0px;
+  color: color;
+  background: rgba(255, 0, 0, 0.212);
+  padding: 5px;
+}
+
 .container {
   width: 400px;
   left: 50%;
@@ -127,6 +145,7 @@ export default {
 }
 
 ul {
+  margin-top: 15px;
   width: 100%;
   padding: 0;
   max-height: 400px;
@@ -154,6 +173,7 @@ ul::-webkit-scrollbar-thumb {
   justify-content: center;
   position: relative;
   margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .todo__container p {
@@ -174,7 +194,7 @@ ul::-webkit-scrollbar-thumb {
   cursor: pointer;
   left: -20px;
   top: 0;
-  height: 19px;
+  /* height: 19px; */
   color: #fff;
   border-right: none;
   background: green;

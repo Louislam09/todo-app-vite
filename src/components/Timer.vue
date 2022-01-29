@@ -170,4 +170,51 @@ export default {
 .deadline_section .title {
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .container {
+    box-sizing: border-box;
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border-radius: 5px;
+    color: white;
+    background: rgba(15, 21, 31, 0.8);
+    box-shadow: 0 15px 25px rgba(250, 112, 102, 0.5);
+  }
+
+  .line {
+    display: none;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .content .time_remaining_section,
+  .deadline_section {
+    flex: 1;
+  }
+  .content .time_remaining_section .title,
+  .deadline_section .title {
+    font-size: 16px;
+    text-align: start;
+  }
+  .content .time_remaining_section .time > div,
+  .deadline_section .dayMonth {
+    flex: 1;
+  }
+
+  .content .time_remaining_section .time > div > span:first-child,
+  .deadline_section .dayMonth > span:first-child {
+    font-size: 2.5rem;
+  }
+  .content .time_remaining_section .time > div > span:last-child,
+  .deadline_section .dayMonth > span:last-child {
+    font-size: 1.5rem;
+  }
+}
 </style>
