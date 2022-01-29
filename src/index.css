@@ -7,8 +7,11 @@
   margin-top: 60px;
 }
 
-body{
+body {
   color: white;
-  background: url(assets/bg.jpg);
+  background: url(assets/bg2.jpg);
   background-size: cover;
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Roboto', sans-serif; */
 }
