@@ -73,14 +73,6 @@ export default {
 };
 </script>
 
-<style>
-body {
-  color: white;
-  background: url(assets/bg.jpg);
-  background-size: cover;
-}
-</style>
-
 <style scoped>
 .container {
   box-sizing: border-box;
