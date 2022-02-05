@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --calendar-main-color: #70f9e0;
+}
+
 body {
   color: white;
   background: url(assets/bg2.jpg);

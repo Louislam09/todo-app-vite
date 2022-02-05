@@ -1,8 +1,14 @@
 <template>
   <nav>
     <ul>
-      <li @click="showTodoApp(true)" :data-s="sTodoApp">Todo</li>
-      <li @click="showTodoApp(false)" :data-s="!sTodoApp">Timer</li>
+      <li
+        v-for="tab in tabs"
+        :key="tab.id"
+        @click="showAppNumber(tab.id)"
+        :data-s="currentAppNumber === tab.id"
+      >
+        {{ tab.title }}
+      </li>
     </ul>
   </nav>
 </template>
@@ -11,12 +17,30 @@
 export default {
   name: "Navbar",
   props: {
-    sTodoApp: Boolean,
+    currentAppNumber: Number,
   },
   methods: {
-    showTodoApp(value) {
-      this.$emit("toggleTodoApp", value);
+    showAppNumber(value) {
+      this.$emit("toggleShowAppNumber", value);
     },
+  },
+  data() {
+    return {
+      tabs: [
+        {
+          id: 0,
+          title: "Todo",
+        },
+        {
+          id: 1,
+          title: "Timer",
+        },
+        {
+          id: 2,
+          title: "Calendar",
+        },
+      ],
+    };
   },
 };
 </script>
