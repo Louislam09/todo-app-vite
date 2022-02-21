@@ -4,7 +4,7 @@
     <h6>(code + phone number)</h6>
     <div class="input__box">
       <input v-model="phoneNumber" type="text" required />
-      <label>Number</label>
+      <label>Phone Number</label>
     </div>
     <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
 
