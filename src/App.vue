@@ -6,6 +6,7 @@
   <Todo v-show="showAppNumber === 0" title="Todo App" />
   <Timer v-show="showAppNumber === 1" />
   <Calendar v-if="showAppNumber === 2" />
+  <wa-me v-if="showAppNumber === 3" title="WaMe" />
 </template>
 
 <script>
@@ -13,6 +14,7 @@ import Todo from "./components/Todo.vue";
 import Timer from "./components/Timer.vue";
 import Calendar from "./components/Calendar.vue";
 import Navbar from "./components/Navbar.vue";
+import WaMe from "./components/WaMe.vue";
 
 export default {
   name: "App",
@@ -31,6 +33,7 @@ export default {
     Timer,
     Navbar,
     Calendar,
+    WaMe,
   },
 };
 </script>

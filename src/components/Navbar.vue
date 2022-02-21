@@ -39,6 +39,10 @@ export default {
           id: 2,
           title: "Calendar",
         },
+        {
+          id: 3,
+          title: "Wame",
+        },
       ],
     };
   },
